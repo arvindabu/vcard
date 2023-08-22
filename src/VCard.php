@@ -1,6 +1,6 @@
 <?php
 
-namespace JeroenDesloovere\VCard;
+namespace arvindabu\VCard;
 
 /*
  * This file is part of the VCard PHP Class from Jeroen Desloovere.
@@ -637,7 +637,7 @@ class VCard
         }
 
         // The chunk_split_unicode creates a huge memory footprint when used on long strings (EG photos are base64 10MB results in > 1GB memory usage)
-        // So check if the string is ASCII (7 bit) and if it is use the built in way RE: https://github.com/jeroendesloovere/vcard/issues/153
+        // So check if the string is ASCII (7 bit) and if it is use the built in way RE: https://github.com/arvindabu/vcard/issues/153
         if ($this->is_ascii($text)) {
            return substr(chunk_split($text, 75, "\r\n "), 0, -3);
         }

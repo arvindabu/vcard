@@ -1,9 +1,9 @@
 <?php
 
-namespace JeroenDesloovere\VCard\tests;
+namespace arvindabu\VCard\tests;
 
-use JeroenDesloovere\VCard\VCard;
-use JeroenDesloovere\VCard\VCardParser;
+use arvindabu\VCard\VCard;
+use arvindabu\VCard\VCardParser;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -140,12 +140,12 @@ class VCardParserTest extends TestCase
     public function testUrl()
     {
         $vcard = new VCard();
-        $vcard->addUrl('http://www.jeroendesloovere.be');
+        $vcard->addUrl('http://www.arvindabu.be');
         $vcard->addUrl('http://home.example.com', 'HOME');
         $vcard->addUrl('http://work1.example.com', 'PREF;WORK');
         $vcard->addUrl('http://work2.example.com', 'PREF;WORK');
         $parser = new VCardParser($vcard->buildVCard());
-        $this->assertEquals($parser->getCardAtIndex(0)->url['default'][0], 'http://www.jeroendesloovere.be');
+        $this->assertEquals($parser->getCardAtIndex(0)->url['default'][0], 'http://www.arvindabu.be');
         $this->assertEquals($parser->getCardAtIndex(0)->url['HOME'][0], 'http://home.example.com');
         $this->assertEquals($parser->getCardAtIndex(0)->url['PREF;WORK'][0], 'http://work1.example.com');
         $this->assertEquals($parser->getCardAtIndex(0)->url['PREF;WORK'][1], 'http://work2.example.com');
@@ -191,7 +191,7 @@ class VCardParserTest extends TestCase
     public function testLogo()
     {
         $image = __DIR__ . '/image.jpg';
-        $imageUrl = 'https://raw.githubusercontent.com/jeroendesloovere/vcard/master/tests/image.jpg';
+        $imageUrl = 'https://raw.githubusercontent.com/arvindabu/vcard/master/tests/image.jpg';
 
         $vcard = new VCard();
         $vcard->addLogo($image, true);
@@ -212,7 +212,7 @@ class VCardParserTest extends TestCase
     public function testPhoto()
     {
         $image = __DIR__ . '/image.jpg';
-        $imageUrl = 'https://raw.githubusercontent.com/jeroendesloovere/vcard/master/tests/image.jpg';
+        $imageUrl = 'https://raw.githubusercontent.com/arvindabu/vcard/master/tests/image.jpg';
 
         $vcard = new VCard();
         $vcard->addPhoto($image, true);
@@ -274,7 +274,7 @@ class VCardParserTest extends TestCase
         $this->assertEquals($cards[0]->fullname, "Jeroen Desloovere");
         // Check the parsing of grouped items as well, which are present in the
         // example file.
-        $this->assertEquals($cards[0]->url['default'][0], 'http://www.jeroendesloovere.be');
+        $this->assertEquals($cards[0]->url['default'][0], 'http://www.arvindabu.be');
         $this->assertEquals($cards[0]->email['INTERNET'][0], 'site@example.com');
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace JeroenDesloovere\VCard\tests;
+namespace arvindabu\VCard\tests;
 
 // required to load
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -12,7 +12,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
  * file that was distributed with this source code.
  */
 
-use JeroenDesloovere\VCard\VCard;
+use arvindabu\VCard\VCard;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -151,7 +151,7 @@ class VCardTest extends TestCase
     public function testAddPhotoWithRemoteJpgPhoto()
     {
         $return = $this->vcard->addPhoto(
-            'https://raw.githubusercontent.com/jeroendesloovere/vcard/master/tests/image.jpg',
+            'https://raw.githubusercontent.com/arvindabu/vcard/master/tests/image.jpg',
             true
         );
 
@@ -166,7 +166,7 @@ class VCardTest extends TestCase
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Returned data is not an image.');
         $this->vcard->addPhoto(
-            'https://raw.githubusercontent.com/jeroendesloovere/vcard/master/tests/empty.jpg',
+            'https://raw.githubusercontent.com/arvindabu/vcard/master/tests/empty.jpg',
             true
         );
     }
@@ -439,7 +439,7 @@ class VCardTest extends TestCase
 
     public function testChunkSplitUnicode()
     {
-        $class_handler  = new \ReflectionClass('JeroenDesloovere\VCard\VCard');
+        $class_handler  = new \ReflectionClass('arvindabu\VCard\VCard');
         $method_handler = $class_handler->getMethod('chunk_split_unicode');
         $method_handler->setAccessible(true);
 

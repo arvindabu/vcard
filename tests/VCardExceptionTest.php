@@ -1,6 +1,6 @@
 <?php
 
-namespace JeroenDesloovere\VCard;
+namespace arvindabu\VCard;
 
 use PHPUnit\Framework\TestCase;
 

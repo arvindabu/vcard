@@ -1,26 +1,26 @@
 # VCard PHP library
-[![Latest Stable Version](http://img.shields.io/packagist/v/jeroendesloovere/vcard.svg)](https://packagist.org/packages/jeroendesloovere/vcard)
-[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/jeroendesloovere/vcard/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/jeroendesloovere/vcard.svg?branch=master)](https://travis-ci.org/jeroendesloovere/vcard)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jeroendesloovere/vcard/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jeroendesloovere/vcard/?branch=master)
+[![Latest Stable Version](http://img.shields.io/packagist/v/arvindabu/vcard.svg)](https://packagist.org/packages/arvindabu/vcard)
+[![License](http://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/arvindabu/vcard/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/arvindabu/vcard.svg?branch=master)](https://travis-ci.org/arvindabu/vcard)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/arvindabu/vcard/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/arvindabu/vcard/?branch=master)
 
 This VCard PHP library can generate a vCard with some data. When using an iOS device < iOS 8 it will export as a .ics file because iOS devices don't support the default .vcf files.
 
-**NOTE**: We are working on a complete new version to work with vCard version 4.0, with extreme good code quality. [Check out the new version](https://github.com/jeroendesloovere/vcard/tree/2.0.0-dev)
+**NOTE**: We are working on a complete new version to work with vCard version 4.0, with extreme good code quality. [Check out the new version](https://github.com/arvindabu/vcard/tree/2.0.0-dev)
 
 ## Usage
 
 ### Installation
 
 ```bash
-composer require jeroendesloovere/vcard
+composer require arvindabu/vcard
 ```
 > This will install the latest version of vcard with [Composer](https://getcomposer.org)
 
 ### Example
 
 ``` php
-use JeroenDesloovere\VCard\VCard;
+use arvindabu\VCard\VCard;
 
 // define vcard
 $vcard = new VCard();
@@ -39,12 +39,12 @@ $vcard->addName($lastname, $firstname, $additional, $prefix, $suffix);
 $vcard->addCompany('Siesqo');
 $vcard->addJobtitle('Web Developer');
 $vcard->addRole('Data Protection Officer');
-$vcard->addEmail('info@jeroendesloovere.be');
+$vcard->addEmail('info@arvindabu.be');
 $vcard->addPhoneNumber(1234121212, 'PREF;WORK');
 $vcard->addPhoneNumber(123456789, 'WORK');
 $vcard->addAddress(null, null, 'street', 'worktown', null, 'workpostcode', 'Belgium');
 $vcard->addLabel('street, worktown, workpostcode Belgium');
-$vcard->addURL('http://www.jeroendesloovere.be');
+$vcard->addURL('http://www.arvindabu.be');
 
 $vcard->addPhoto(__DIR__ . '/landscape.jpeg');
 
@@ -68,7 +68,7 @@ The parser can either get passed a VCard string, like so:
 
 ```php
 // load VCardParser classes
-use JeroenDesloovere\VCard\VCardParser;
+use arvindabu\VCard\VCardParser;
 
 $parser = new VCardParser($vcardString);
 echo $parser->getCardAtIndex(0)->fullname; // Prints the full name.
@@ -84,7 +84,7 @@ echo $parser->getCardAtIndex(0)->fullname; // Prints the full name.
 
 **Support for frameworks**
 
-I've created a Symfony Bundle: [VCard Bundle](https://github.com/jeroendesloovere/vcard-bundle)
+I've created a Symfony Bundle: [VCard Bundle](https://github.com/arvindabu/vcard-bundle)
 
 Usage in for example: Laravel
 ```php
@@ -129,8 +129,8 @@ More info on how to work with GitHub on help.github.com.
 
 ## Credits
 
-- [Jeroen Desloovere](https://github.com/jeroendesloovere)
-- [All Contributors](https://github.com/jeroendesloovere/vcard/contributors)
+- [Jeroen Desloovere](https://github.com/arvindabu)
+- [All Contributors](https://github.com/arvindabu/vcard/contributors)
 
 ## License
 
